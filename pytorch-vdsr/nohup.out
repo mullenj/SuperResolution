@@ -1,0 +1,35 @@
+/home/me-user/anaconda3/envs/mullenj/lib/python3.8/site-packages/torch/nn/_reduction.py:44: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+main_vdsr.py:149: UserWarning: torch.nn.utils.clip_grad_norm is now deprecated in favor of torch.nn.utils.clip_grad_norm_.
+  nn.utils.clip_grad_norm(model.parameters(),opt.clip)
+Namespace(batch_size=256, clip=0.4, cuda=False, gpus='0', lr=0.1, momentum=0.9, nEpochs=50, pretrained='', resume='', start_epoch=1, step=10, threads=1, weight_decay=0.0001)
+Random Seed:  182
+===> Loading datasets
+2118371 data samples found
+===> Building model
+===> Setting GPU
+===> Setting Optimizer
+===> Training
+Epoch = 1, lr = 0.1
+torch.Size([256, 1, 128, 128]) torch.Size([256, 1, 128, 128])
+===> Epoch[1](0/6619): Loss: 4079758.0000000000
+Traceback (most recent call last):
+  File "main_vdsr.py", line 174, in <module>
+    main()
+  File "main_vdsr.py", line 120, in main
+    train(train_loader, test_loader, optimizer, model, criterion, epoch)
+  File "main_vdsr.py", line 156, in train
+    for x, y in testing_data_loader:
+  File "/home/me-user/anaconda3/envs/mullenj/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 363, in __next__
+    data = self._next_data()
+  File "/home/me-user/anaconda3/envs/mullenj/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 403, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/me-user/anaconda3/envs/mullenj/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/me-user/anaconda3/envs/mullenj/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "main_vdsr.py", line 53, in __getitem__
+    sample = np.load(file_path)
+  File "/home/me-user/anaconda3/envs/mullenj/lib/python3.8/site-packages/numpy/lib/npyio.py", line 428, in load
+    fid = open(os_fspath(file), "rb")
+KeyboardInterrupt
